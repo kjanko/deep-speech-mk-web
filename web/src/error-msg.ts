@@ -2,8 +2,8 @@
  * Error strings.
  */
 export default class ERROR_MSG {
-  static ERR_NO_RECORDING: string = "Please record first.";
-  static ERR_NO_PLAYBACK: string = "Please listen before submitting.";
+  static ERR_NO_RECORDING: string = "Ве молиме, прво снимете..";
+  static ERR_NO_PLAYBACK: string = "Ве молиме прво преслушајте па прикачете.";
   static ERR_PLATFORM: string = "Your browser does not support audio recording.";
   static ERR_NO_CONSENT: string = "You did not consent to recording. You must click the \"I Agree\" button in order to use this website.";
   static ERR_NO_MIC: string = "You did not allow this website to use the microphone. The website needs the microphone to record your voice.";

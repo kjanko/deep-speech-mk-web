@@ -23,26 +23,26 @@ export default class Home extends Component<Props, void> {
 
   render() {
     return <div id="home-container" className={this.props.active}>
-      <h1 id="home-title">Project Common Voice</h1>
+      <h1 id="home-title">Project Jargon</h1>
       <div id="home-layout">
         <div className="left-column">
-          <p>Voice is natural, voice is human. That’s why we’re fascinated with creating usable voice technology for our machines. But to create voice systems, an extremely large amount of voice data is required. Most of the data used by large companies isn’t available to the majority of people. We think that stifles innovation. So we’ve launched Project Common Voice, a project to help make voice recognition open to everyone. Now you can donate your voice to help us build an open-source voice database that anyone can use to make innovative apps for devices and the web.</p>
+          <p>Гласот е природен, гласот е човечки. Затоа ние сме фасцинирани со креирање на употреблива гласовна технологија за нашите машини. Но за да се креираат гласовни системи, потребна е исклучително голема количина на гласовни податоци. Поголемиот дел од податоците што ги користат големите компании не се достапни до мнозинството на луѓе. Ние мислиме дека тоа ја задушува иновацијата. Затоа во соработка со Mozilla го лансиравме проектот "Jargon" кој ќе помогне во препознавањето на говор за македонски јазик. Сега можете да го донирате вашиот глас за да ни помогнете да изградиме гласовна база на податоци која ќе може да се искористи за да се направат иновативни апликации за вашите уреди и за веб.</p>
 
-          <p>Read a sentence to help machines learn how real people speak. Check the work of other contributors to improve the quality. It’s that simple!</p>
+          <p>Прочитајте реченица за да им помогнете на машините да научат како луѓето зборуваат. Проверете ја работата на останатите соработници за да се подобри квалитетот. Тоа е толку едноставно!</p>
         </div>
         <div className="right-column">
-          <p class="strong">You can also help by validating donations!</p>
+          <p class="strong">Исто така можете да помогнете со тоа што ќе ги валидирате донациите!</p>
           <img class="curved-arrow" src="/img/curved-arrow.png" />
           <img class="circle" src="/img/circle.png" />
         </div>
         <div id="donate">
           <button onClick={evt => {
-            this.props.navigate('/record')}}>Donate your voice!</button>
+            this.props.navigate('/record')}}>Донирајте го вашиот глас!</button>
         </div>
       </div>
       <div id="try-it-container">
         <h1>Try it!</h1>
-        <p id="help-home" class="strong">Help us validate&nbsp;<span>sentences.</span></p>
+        <p id="help-home" class="strong">Помогнете ни да валидираме &nbsp;<span>реченици.</span></p>
         <Validator onVote={this.onVote} api={this.props.api} />
       </div>
     </div>;

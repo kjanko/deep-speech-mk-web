@@ -155,7 +155,7 @@ export default class AudioWeb {
       this.ready = true;
     }).catch((err) => {
       if (err === ERROR_MSG.ERR_NO_MIC) {
-        return confirm('You must allow microphone access.', 'Retry', 'Cancel').then(() => {
+        return confirm('Мора да дозволите пристап до вашиот микрофон.', 'Одново', 'Откажи').then(() => {
           window.location.reload();
         });
       } else {

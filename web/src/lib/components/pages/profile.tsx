@@ -125,7 +125,7 @@ export default class Profile extends Component<Props, State> {
 
     return <div id="profile-container" className={this.props.active}>
       <h2>Profile Data</h2>
-      <label for="email">Your email address</label>
+      <label for="email">Вашата е-маил адреса</label>
       <div className="input-and-button">
         <input onKeyUp={this.update}
                className={emailModified ? 'unsaved': ''}
@@ -138,24 +138,24 @@ export default class Profile extends Component<Props, State> {
       <div id="opt-in">
         <input onClick={this.configSendEmails} id="send-emails"
                type="checkbox" checked={user.sendEmails} />
-        <label for="send-emails">Send me emails</label>
+        <label for="send-emails">Испрати ми пораки</label>
         <p id="email-explanation">
-          I'd like to stay informed about the Common Voice Project.
+          Би сакал да останам информиран за проектот Jargon.
         </p>
       </div>
       <hr />
-      <h2>Demographic Data</h2>
-      <label for="profile-accent">Your English accent</label>
+      <h2>Демографски податоци</h2>
+      <label for="profile-accent">Вашиот македонски акцент</label>
       <select onChange={this.update} id="profile-accent"
               className={accentModified ? 'unsaved': ''}>
         {accentOptions}
       </select>
-      <label for="profile-age">Your age</label>
+      <label for="profile-age">Вашите години</label>
       <select onChange={this.update} id="profile-age"
               className={ageModified ? 'unsaved': ''}>
         {ageOptions}
       </select>
-      <label for="profile-gender">Your gender</label>
+      <label for="profile-gender">Вашиот пол</label>
       <select onChange={this.update} id="profile-gender"
               className={genderModified ? 'unsaved': ''}>
         {genderOptions}
@@ -163,7 +163,7 @@ export default class Profile extends Component<Props, State> {
       <button id="save-demos" onClick={this.saveDemographics}
         className={accentModified || ageModified || genderModified ?
           'dark highlight': 'dark'}>
-        Save changes
+        Снимете промени
       </button>
     </div>;
   }

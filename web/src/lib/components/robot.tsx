@@ -7,7 +7,7 @@ const MODE_THINKING = '/img/robot-thinking.png';
 const MODE_THANKS = '/img/robot-thanks.png';
 const MODE_THUMBS_UP = '/img/robot-thumbs-up.png';
 
-const SPEECH_GREETINGS = 'Click here to help me learn!';
+const SPEECH_GREETINGS = 'Кликни за да ми помогнеш да научам!';
 
 interface Props {
   position?: string;

@@ -31,13 +31,13 @@ const URLS = {
 
 const ROBOT_TALK = {
   'home': [
-    <p>Greetings human!</p>,
-    <p>My name is M.A.R.S. and I am a learning robot.</p>,
-    <p>Right now, I am learning to speak like a human.</p>,
-    <p>But. . .  it's so hard!</p>,
-    <p>Can you help me learn?</p>,
-    <p>All I need is for you to read to me. :)</p>,
-    <p>Please click on the heart below to get started teaching me.</p>,
+    <p>Добредојде човеку!</p>,
+    <p>Моето име е M.A.R.S. и јас сум робот кој учи.</p>,
+    <p>Моментално, јас учам да зборувам како човек.</p>,
+    <p>Но. . .  Тоа е толку тешко!</p>,
+    <p>Дали би ми помогнал да научам?</p>,
+    <p>Се што треба да направиш е да ме прочиташ. :)</p>,
+    <p>Те молам кликни на срцето подолу за да започнеш да ме учиш.</p>,
   ]
 }
 
@@ -332,7 +332,7 @@ export default class Pages extends Component<PagesProps, PagesState> {
     }
 
     return <div id="main" className={className}>
-      <div onClick={this.openInApp} id="install-app">Open in App
+      <div onClick={this.openInApp} id="install-app">Отвори во апликација
         <a onClick={this.closeOpenInApp}>X</a></div>
       <header className={(this.state.isMenuVisible || this.state.scrolled ?
                           'active' : '')}>
@@ -383,17 +383,17 @@ export default class Pages extends Component<PagesProps, PagesState> {
               <a id="help" onClick={this.linkNavigate}
                  href="/faq">
                 <Icon type="help" />
-                <p class="strong">Help</p>
+                <p class="strong">Помош</p>
               </a>
               <a id="contribute"
                  target="_blank" href="https://github.com/mozilla/voice-web">
                 <Icon type="github" />
-                <p class="strong">Contribute</p>
+                <p class="strong">Придонеси</p>
               </a>
               <a id="discourse"
                  target="blank" href="https://discourse.mozilla-community.org/c/voice">
                 <Icon type="discourse" />
-                <p class="strong">Community</p>
+                <p class="strong">Заедница</p>
               </a>
             </div>
           </div>
@@ -402,9 +402,9 @@ export default class Pages extends Component<PagesProps, PagesState> {
               <Logo navigate={this.props.navigate}/>
               <div class="links">
                 <p>
-                  <a onClick={this.linkNavigate} href="/privacy">Privacy</a>
-                  <a onClick={this.linkNavigate} href="/terms">Terms</a>
-                  <a target="_blank" href="https://www.mozilla.org/en-US/privacy/websites/#cookies">Cookies</a>
+                  <a onClick={this.linkNavigate} href="/privacy">Приватност</a>
+                  <a onClick={this.linkNavigate} href="/terms">Услови</a>
+                  <a target="_blank" href="https://www.mozilla.org/en-US/privacy/websites/#cookies">Колачиња</a>
                   <a onClick={this.linkNavigate} href="/faq">FAQ</a>
                 </p>
                 <p>Content available under a&nbsp;<a target="_blank" href="https://www.mozilla.org/en-US/foundation/licensing/website-content/">Creative Commons license</a></p>
@@ -419,11 +419,11 @@ export default class Pages extends Component<PagesProps, PagesState> {
       </div>
       <div className={'overlay' + (this.state.showingPrivacy ? ' active' : '')}>
         <div class="privacy-content">
-          <h2>By using Common Voice, you agree to our <a target="_blank" href="/terms">Terms</a> and <a target="_blank" href="/privacy">Privacy Notice</a>.
+          <h2>Со користење на Jargon, се согласувате на нашите <a target="_blank" href="/terms">услови</a> и <a target="_blank" href="/privacy">политиката на приватност</a>.
           </h2>
           <div class="button-holder">
-            <button onClick={e => { this.state.onPrivacyAction && this.state.onPrivacyAction(true); }}>I agree</button>
-            <button onClick={e => { this.state.onPrivacyAction && this.state.onPrivacyAction(false); }}>I do not agree</button>
+            <button onClick={e => { this.state.onPrivacyAction && this.state.onPrivacyAction(true); }}>Се согласувам</button>
+            <button onClick={e => { this.state.onPrivacyAction && this.state.onPrivacyAction(false); }}>Не се согласувам</button>
           </div>
         </div>
       </div>

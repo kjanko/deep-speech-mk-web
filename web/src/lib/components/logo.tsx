@@ -7,7 +7,7 @@ export default (props) => {
       evt.stopPropagation();
       props.navigate('/');
     }}>
-    <span class="main-title">Common Voice</span><br />
-    <img class="main-mozilla-logo" src="/img/mozilla.svg" />
+    <span class="main-title">Jargon</span><br />
+    <img class="main-mozilla-logo" src="/img/netcetera.svg" />
   </a>;
 }

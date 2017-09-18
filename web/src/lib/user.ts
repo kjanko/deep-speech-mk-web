@@ -5,22 +5,9 @@ const USER_KEY = 'userdata';
 
 export const ACCENTS = {
   '': '--',
-  'us': 'United States English',
-  'australia': 'Australian English',
-  'england': 'England English',
-  'canada': 'Canadian English',
-  'philippines': 'Filipino',
-  'hongkong': 'Hong Kong English',
-  'indian': 'India and South Asia (India, Pakistan, Sri Lanka)',
-  'ireland': 'Irish English',
-  'malaysia': 'Malaysian English',
-  'newzealand': 'New Zealand English',
-  'scotland': 'Scottish English',
-  'singapore': 'Singaporian English',
-  'southatlandtic': 'South Atlantic (Falkland Islands, Saint Helena)',
-  'african': 'Southern African (South Africa, Zimbabwe, Namibia)',
-  'wales': 'Welsh English',
-  'bermuda': 'West Indies and Bermuda (Bahamas, Bermuda, Jamaica, Trinidad)',
+  'east': 'Источен',
+  'central': 'Централен',
+  'west': 'Западен',
 };
 
 export const AGES = {
@@ -38,8 +25,8 @@ export const AGES = {
 
 export const GENDER = {
   '': '--',
-  'male': 'Male',
-  'female': 'Female',
+  'male': 'Машко',
+  'female': 'Женско',
   'other': 'Other'
 };
 

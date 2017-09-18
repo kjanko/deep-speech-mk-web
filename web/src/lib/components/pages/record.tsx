@@ -183,7 +183,7 @@ export default class RecordPage extends Component<RecordProps, RecordState> {
         this.setState({
           uploading: false
         });
-        confirm('You did not agree to our Terms of Service. Do you want to delete your recordings?', 'Keep the recordings', 'Delete my recordings').then((keep) => {
+        confirm('Вие не се согласивте на нашите услови. Дали би сакале да ги избришете вашите снимки?', 'Зачувај ги снимките.', 'Избриши ги снимките').then((keep) => {
           if (!keep) {
             this.reset();
             this.props.navigate('/');
@@ -290,17 +290,15 @@ export default class RecordPage extends Component<RecordProps, RecordState> {
     if (this.isUnsupportedPlatform) {
       return <div className={'unsupported ' + this.props.active}>
         <h2>
-          We're sorry, but your platform is not currently supported.
+		  Се извинуваме, но вашата платформа е моментално неподдржана.
         </h2>
         <p>
-          On desktop computers, you can download the latest:
+          На десктоп компјутери, може да го превземете последниот:
           <a target="_blank" href="https://www.firefox.com/">
             <Icon type="firefox" />Firefox</a> or
           <a target="_blank" href="https://www.google.com/chrome">
             <Icon type="chrome" />Chrome</a>
         </p>
-        <p><b>iOS</b> users can download our free app:</p>
-        <a target="_blank" href={getItunesURL()}><img src="/img/appstore.svg" /></a>
       </div>;
     }
 
@@ -353,15 +351,15 @@ export default class RecordPage extends Component<RecordProps, RecordState> {
         <div id="record-button" onTouchStart={this.onRecordClick}
                                 onClick={this.onRecordClick}></div>
         <p id="record-help">
-          Please tap to record, then read the above sentence aloud.
+		  Ве молиме кликнете за да започнете со снимање, па гласно прочитајте ја реченицата.
         </p>
       </div>
       <div id="voice-submit">
-        <p id="thank-you"><span>Thank you!</span></p>
-        <p id="want-to-review"><span>Want to review your recording?</span></p>
+        <p id="thank-you"><span>Благодариме!</span></p>
+        <p id="want-to-review"><span>Дали би сакале да ја прегледате вашата снимка?</span></p>
         <p id="box-headers">
-          <span>Play/Stop</span>
-          <span>Re-record</span>
+          <span>Вклучи/Исклучи</span>
+          <span>Преснимај</span>
         </p>
         {listens}
         <ProgressButton percent={progress} disabled={this.state.uploading}

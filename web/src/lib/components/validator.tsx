@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 import ListenBox from './listen-box';
 import { ClipJson, default as API } from '../api';
 
-const LOADING_MESSAGE = 'Loading...';
-const LOAD_ERROR_MESSAGE = 'Sorry! We are processing our audio files, please try again shortly.';
+const LOADING_MESSAGE = 'Се вчитува...';
+const LOAD_ERROR_MESSAGE = 'Извинете! Ние ги процесираме нашите аудио фајлови, ве молиме обидете се наскоро.';
 
 interface Props {
   api: API;
