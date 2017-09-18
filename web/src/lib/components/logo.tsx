@@ -8,6 +8,6 @@ export default (props) => {
       props.navigate('/');
     }}>
     <span class="main-title">Jargon</span><br />
-    <img class="main-mozilla-logo" src="/img/netcetera.svg" />
+    <span class="secondary-title">nca:\\a</span><br />
   </a>;
 }

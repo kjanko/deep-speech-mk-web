@@ -124,7 +124,7 @@ export default class Profile extends Component<Props, State> {
     });
 
     return <div id="profile-container" className={this.props.active}>
-      <h2>Profile Data</h2>
+      <h2>Податоци за профил</h2>
       <label for="email">Вашата е-маил адреса</label>
       <div className="input-and-button">
         <input onKeyUp={this.update}

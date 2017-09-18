@@ -831,7 +831,7 @@ body:not(.ios) .recording #background-container {
   color: var(--base-background-color);
   background-color: var(--base-font-color);
   line-height: 1.2;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .main-mozilla-logo {

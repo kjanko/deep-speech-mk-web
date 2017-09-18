@@ -407,7 +407,7 @@ export default class Pages extends Component<PagesProps, PagesState> {
                   <a target="_blank" href="https://www.mozilla.org/en-US/privacy/websites/#cookies">Колачиња</a>
                   <a onClick={this.linkNavigate} href="/faq">FAQ</a>
                 </p>
-                <p>Content available under a&nbsp;<a target="_blank" href="https://www.mozilla.org/en-US/foundation/licensing/website-content/">Creative Commons license</a></p>
+                <p>Содржината е достапна под a&nbsp;<a target="_blank" href="https://www.mozilla.org/en-US/foundation/licensing/website-content/">Creative Commons license</a></p>
               </div>
             </div>
           </div>
@@ -440,10 +440,10 @@ export default class Pages extends Component<PagesProps, PagesState> {
 
   private renderNav(id?: string) {
     return <nav id={id} className="nav-list">
-      {this.renderTab('/', 'home')}
-      {this.renderTab('/record', 'speak')}
-      {this.renderTab('/listen', 'listen')}
-      {this.renderTab('/profile', 'profile')}
+      {this.renderTab('/', 'Дома')}
+      {this.renderTab('/record', 'Зборувај')}
+      {this.renderTab('/listen', 'Слушај')}
+      {this.renderTab('/profile', 'Профил')}
     </nav>;
   }
 
