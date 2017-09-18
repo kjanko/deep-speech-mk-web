@@ -38,7 +38,7 @@ export default class FAQ extends Component<Props, State> {
       <h3>Where does the source text come from?</h3>
       <p>The current sentences come from contributor donations, as well as dialogue
          from public domain movie scripts like <i>It's a Wonderful Life.</i></p>
-      <p>You can view our source sentences in <a target="_blank" href="https://github.com/mozilla/voice-web/blob/master/server/data/">this GitHub folder</a>.</p>
+      <p>You can view our source sentences in <a target="_blank" href="https://github.com/kjanko/deep-speech-mk-sentences">this GitHub folder</a>.</p>
     </div>;
   }
 }
