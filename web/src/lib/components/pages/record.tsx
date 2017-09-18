@@ -7,7 +7,7 @@ import AudioIOS from './record/audio-ios';
 import AudioWeb, { AudioInfo } from './record/audio-web';
 import ListenBox from '../listen-box';
 import ProgressButton from '../progress-button';
-import ERROR_MSG from '../../../error-msg';
+import ERROR_MSG from '../../../errormsg';
 import { getItunesURL, isFocus, countSyllables, isNativeIOS, generateGUID }
   from '../../utility';
 import confirm from '../confirm';

@@ -1,4 +1,4 @@
-import ERROR_MSG from '../../../../error-msg';
+import ERROR_MSG from '../../../../errormsg';
 import { isNativeIOS } from '../../../utility';
 import confirm from '../../confirm';
 
