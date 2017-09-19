@@ -1,7 +1,6 @@
 import * as http from 'http';
 import Files from './files';
 import { getFileExt } from './utility';
-import respond, { CONTENT_TYPES } from './responder';
 
 const ms = require('mediaserver');
 const path = require('path');
@@ -65,7 +64,8 @@ export default class Clip {
       ms.pipe(request, response, tmpFilePath);
     }).onError(err => {
       console.error('streaming audio error', err, err.stack);
-      respond(response, 'Server error, could not fetch audio data.', 500);
+      response.writeHead(500);
+      response.end('Server error, could not fetch audio data.');
     });
   }
 
@@ -150,10 +150,12 @@ export default class Clip {
   saveClipVote(request: http.IncomingMessage,
                   response: http.ServerResponse) {
       this.saveVote(request).then(timestamp => {
-        respond(response, '' + timestamp);
+        response.writeHead(200);
+        response.end('' + timestamp);
       }).catch(e => {
+        response.writeHead(500);
         console.error('saving clip vote error', e, e.stack);
-        respond(response, 'Error', 500);
+        response.end('Error');
       });
   }
 
@@ -193,10 +195,12 @@ export default class Clip {
   saveClipDemographic(request: http.IncomingMessage,
                   response: http.ServerResponse) {
       this.saveDemographic(request).then(timestamp => {
-        respond(response, '' + timestamp);
+        response.writeHead(200);
+        response.end('' + timestamp);
       }).catch(e => {
+        response.writeHead(500);
         console.error('saving clip demographic error', e, e.stack);
-        respond(response, 'Error', 500);
+        response.end('Error');
       });
   }
 
@@ -235,10 +239,12 @@ export default class Clip {
   saveClip(request: http.IncomingMessage,
                   response: http.ServerResponse) {
       this.save(request).then(timestamp => {
-        respond(response, '' + timestamp);
+        response.writeHead(200);
+        response.end('' + timestamp);
       }).catch(e => {
+        response.writeHead(500);
         console.error('saving clip error', e, e.stack);
-        respond(response, 'Error', 500);
+        response.end('Error');
       });
   }
 
@@ -320,10 +326,12 @@ export default class Clip {
     }
 
     return this.files.getRandomClipJson(uid).then(clipJson => {
-      respond(response, clipJson, 200, CONTENT_TYPES.JSON);
+      response.writeHead(200);
+      response.end(clipJson);
     }).catch(err => {
       console.error('could not get random clip', err);
-      respond(response, 'Still loading', 500);
+      response.writeHead(500);
+      response.end('Still loading');
     });
   }
 
@@ -366,7 +374,8 @@ export default class Clip {
       this.streamAudio(request, response, key);
     }).catch(err => {
       console.error('problem getting a random clip: ', err);
-      respond(response, 'Cannot fetch random clip right now.', 500);
+      response.writeHead(500);
+      response.end('Cannot fetch random clip right now.');
       return;
     });
   }
@@ -381,7 +390,8 @@ export default class Clip {
     this.s3.listObjectsV2(searchParam, (err: any, data: any) => {
       if (err) {
         console.error('Did not find specified clip', err);
-        respond(response, 'Unknown File', 404);
+        response.writeHead(404);
+        response.end('Unknown File');
         return;
       }
 
@@ -397,7 +407,8 @@ export default class Clip {
 
       if (!key) {
         console.error('could not find clip', data.Contents);
-        respond(response, 'Unknown File', 404);
+        response.writeHead(404);
+        response.end('Unknown File');
         return;
       }
 
