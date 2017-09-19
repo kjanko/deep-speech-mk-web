@@ -400,14 +400,8 @@ export default class Pages extends Component<PagesProps, PagesState> {
           <div id="moz-links">
             <div class="content">
               <Logo navigate={this.props.navigate}/>
-
-              <a class="main-logo" href="/">
-                <span class="main-title">Common Voice</span>
-                <br>
-                <span class="secondary-title">moz:\\a</span>
-                <br>
-              </a>
-              
+              <span class="main-title">Common Voice</span><br />
+              <span class="secondary-title">moz:\\a</span><br />
               <div class="links">
                 <p>
                   <a onClick={this.linkNavigate} href="/privacy">Приватност</a>
