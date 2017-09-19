@@ -400,7 +400,7 @@ export default class Pages extends Component<PagesProps, PagesState> {
           <div id="moz-links">
             <div class="content">
               <Logo navigate={this.props.navigate}/>
-              <div style="float: left; margin-right: 3rem; font-size: 1rem;">
+              <div style="float: left; margin-right: 3rem; font-size: 1rem; font-family: ZillaSlab,Georgia,Utopia,Charter,serif;">
                 <span class="main-title">Common Voice</span><br />
                 <span class="secondary-title">moz:\\a</span><br />
               </div>
