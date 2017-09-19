@@ -9,6 +9,5 @@ export default (props) => {
     }}>
     <span class="main-title">Jargon</span><br />
     <span class="secondary-title">nca:\\a</span><br />
-    <span class="secondary-title">moz:\\a</span><br />
   </a>;
 }
