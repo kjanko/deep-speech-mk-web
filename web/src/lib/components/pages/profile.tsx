@@ -132,7 +132,7 @@ export default class Profile extends Component<Props, State> {
                id="email" type="email" name="email" value={this.state.email}/>
         <button onClick={this.saveEmail}
           className={emailModified ? 'highlight': ''}>
-          Save
+          Сними
         </button>
       </div>
       <div id="opt-in">

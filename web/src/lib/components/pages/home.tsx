@@ -31,7 +31,7 @@ export default class Home extends Component<Props, void> {
           <p>Прочитајте реченица за да им помогнете на машините да научат како луѓето зборуваат. Проверете ја работата на останатите соработници за да се подобри квалитетот. Тоа е толку едноставно!</p>
         </div>
         <div className="right-column">
-          <p class="strong">Исто така можете да помогнете со тоа што ќе ги валидирате донациите!</p>
+          <p class="strong">Помогни за валидација на туѓите гласовни донации!</p>
           <img class="curved-arrow" src="/img/curved-arrow.png" />
           <img class="circle" src="/img/circle.png" />
         </div>
