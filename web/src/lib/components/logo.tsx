@@ -8,6 +8,6 @@ export default (props) => {
       props.navigate('/');
     }}>
     <span class="main-title">Jargon</span><br />
-    <span class="secondary-title">nca:\\a</span><br />
+    <span class="secondary-title">netcetera</span><br />
   </a>;
 }
