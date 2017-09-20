@@ -27,7 +27,7 @@ export const GENDER = {
   '': '--',
   'male': 'Машко',
   'female': 'Женско',
-  'other': 'Other'
+  'other': 'Друго'
 };
 
 interface UserState {
