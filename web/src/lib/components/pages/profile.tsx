@@ -125,20 +125,20 @@ export default class Profile extends Component<Props, State> {
 
     return <div id="profile-container" className={this.props.active}>
       <h2>Податоци за профил</h2>
-      <label for="email">Вашата е-маил адреса</label>
+      <label for="email">Вашата е-адреса</label>
       <div className="input-and-button">
         <input onKeyUp={this.update}
                className={emailModified ? 'unsaved': ''}
                id="email" type="email" name="email" value={this.state.email}/>
         <button onClick={this.saveEmail}
           className={emailModified ? 'highlight': ''}>
-          Сними
+          Зачувај
         </button>
       </div>
       <div id="opt-in">
         <input onClick={this.configSendEmails} id="send-emails"
                type="checkbox" checked={user.sendEmails} />
-        <label for="send-emails">Испрати ми пораки</label>
+        <label for="send-emails">Се согласувам да добивам новости за проектот „Jargon“ на мојата е-адреса.</label>
         <p id="email-explanation">
           Би сакал да останам информиран за проектот Jargon.
         </p>
@@ -163,7 +163,7 @@ export default class Profile extends Component<Props, State> {
       <button id="save-demos" onClick={this.saveDemographics}
         className={accentModified || ageModified || genderModified ?
           'dark highlight': 'dark'}>
-        Снимете промени
+        Зачувај промени
       </button>
     </div>;
   }

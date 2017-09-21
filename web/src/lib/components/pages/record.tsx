@@ -351,7 +351,7 @@ export default class RecordPage extends Component<RecordProps, RecordState> {
         <div id="record-button" onTouchStart={this.onRecordClick}
                                 onClick={this.onRecordClick}></div>
         <p id="record-help">
-		  Ве молиме кликнете за да започнете со снимање, па гласно прочитајте ја реченицата.
+		      Ве молиме кликнете на кругчето за да започнете со снимање, а потоа гласно прочитајте ја реченицата.
         </p>
       </div>
       <div id="voice-submit">
