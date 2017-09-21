@@ -1152,6 +1152,7 @@ body:not(.ios) .recording #background-container {
 
 #home-layout .left-column p {
   margin-bottom: 1rem;
+  font-size: 13px;
 }
 
 #home-layout .left-column > button {
