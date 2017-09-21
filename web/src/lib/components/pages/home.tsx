@@ -32,6 +32,7 @@ export default class Home extends Component<Props, void> {
 				<strong>Донирајте го и вие вашиот глас!</strong>
 				<br />Треба само да ја прочитате реченицата која ви се прикажува на дисплејот или пак, да ја проверите работата на останатите волонтери кои веќе донирале. Толку е едноставно! 		
 			</p>
+		</div>
         <div className="right-column">
           <p class="strong">Придонесете со тоа што ќе ги валидирате гласовните донации!</p>
           <img class="curved-arrow" src="/img/curved-arrow.png" />
