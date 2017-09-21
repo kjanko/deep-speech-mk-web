@@ -1157,8 +1157,8 @@ body:not(.ios) .recording #background-container {
 
 .p-home-title
 {
-	padding-top: .1rem;
-	padding-bottom: .1rem;
+	margin-top: .3rem;
+	margin-bottom: -1rem;
 }
 
 #home-layout .left-column > button {
