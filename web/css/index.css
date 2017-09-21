@@ -1155,6 +1155,12 @@ body:not(.ios) .recording #background-container {
   font-size: 13px;
 }
 
+.p-home-title
+{
+	padding-top: .1rem;
+	padding-bottom: .1rem;
+}
+
 #home-layout .left-column > button {
   float: right;
 }
