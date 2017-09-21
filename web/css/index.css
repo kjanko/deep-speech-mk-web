@@ -1150,7 +1150,7 @@ body:not(.ios) .recording #background-container {
   line-height: 1.55;
 }
 
-#home-layout .left-column p:first-child {
+#home-layout .left-column p {
   margin-bottom: 1rem;
 }
 
