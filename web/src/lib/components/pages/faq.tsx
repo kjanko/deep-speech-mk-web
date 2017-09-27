@@ -10,35 +10,24 @@ interface State {
 export default class FAQ extends Component<Props, State> {
   render() {
     return <div id="faq-container" className={this.props.active}>
-      <h1>Frequently Asked Questions</h1>
-      <h3>What is Common Voice?</h3>
-      <p>Voice recognition technology could revolutionize the way we interact with machines, but the currently available systems are expensive and proprietary. Common Voice is a project to make voice recognition technology easily accessible to everyone. People donate their voices to a massive database that will let anyone quickly and easily train voice-enabled apps. All voice data will be available to developers.</p>
+      <h1>Често поставувани прашања</h1>
+      <h3>Што е Jargon?</h3>
+      <p>Технологијата базирана на препознавање глас, може да го револуционализира начинот на кој ние комуницираме со машините, но во моментов сите постојни системи се скапи и комерцијални. Jargon е проект кој има за цел овие технологии да ги направи достапни за сите. Луѓето го донираат сопствениот глас во масивна база на податоци, што ќе им овозможи на сите да дадат придонес во апликации поврзани со гласовни команди, а сите гласовни податоци ќе им бидат достапни на сите програмери. </p>
 
-      <h3>Why is it important?</h3>
-      <p>Voice is natural, voice is human. It’s the easiest and most natural way to communicate. We want developers to be able to build amazing things from real-time translators to voice-enabled administrative assistants. But right now there isn't enough publicly available data to build these kinds of apps. Common Voice will give developers what they need to innovate.</p>
+      <h3>Зошто е важно?</h3>
+      <p>Гласот е најлесниот и најприродниот начин на комуникација. Ние сакаме програмерите да можат да креираат софтвер од вистински преведувачи и административни асистенти базирани на глас. Но, во моментов нема доволен број јавно достапни податоци со кои може да се креираат вакви апликации. Common Voice ќе им го даде она што им е потребно на програмерите за да можат да иновираат.</p>
 
-      <h3>When will the dataset be available?</h3>
-      <p>Mozilla started capturing voices in June and aims to release the open source database later in 2017, under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC-0</a> license.</p>
+      <h3>Кое е нивото на потребен квалитет за едно аудио да биде корисно?</h3>
+      <p>Ние сакаме квалитетот на аудиото да одговара на квалитетот на она што ќе го има и во природни услови. Сакаме варијбилност. Тоа не учи како да се справуваме со различни ситуаиции – позадински шум, бучава од возила, гласно навивање – и сето тоа без грешки.</p>
 
-      <h3>Why is Common Voice part of the Mozilla mission?</h3>
-      <p>Mozilla is dedicated to keeping the web open and accessible for everyone. To do it we need to empower web creators through projects like Common Voice. As voice technologies proliferate beyond niche applications, we believe they must serve all users equally well. We see a need to include more languages, accents and demographics when building and testing voice technologies. Mozilla wants to see a healthy, vibrant internet. That means giving new creators access to voice data so they can build new, extraordinary projects. Common Voice will be a public resource that will help Mozilla teams and developers around the world. </p>
+      <h3>Зошто цел за снименото аудио се 10.000 часови?</h3>
+      <p>Тоа е приближниот број на часови кои што се потребни за да се обучи еден STT систем.</p>
 
-      <h3>I am a non-native English speaker and I speak with an accent, do you still want my voice?</h3>
-      <p>Yes, we definitely want your voice! Part of the aim of Common Voice is to gather as many different accents as possible, so that computers can better understand <b>everyone</b> when they speak.</p>
+      <h3>Кој е изворот на текстот?</h3>
+      <p>Во моментов речениците произлегуваат од донатори кои сакаат да придонесат, како и од јавни домени од филмски сценарија како „Титаник“.</p>
 
-      <h3>Will speech to text, via Common Voice, ever become part of Firefox?</h3>
-      <p>Common Voice has unlimited potential and we would eventually integrate these engines into our Mozilla products as well—that means Firefox.</p>
+      <p>Речениците можете да ги прегледате во оваа датотека на <a target="_blank" href="https://github.com/kjanko/deep-speech-mk-sentences">GitHub</a>.</p>
 
-      <h3>What is the level of quality needed for the audio in order to be used?</h3>
-      <p>We want the audio quality to reflect the audio quality a speech-to-text engine will see in the wild. Thus, we want variety. This teaches the speech-to-text engine to handle various situations—background talking, car noise, fan noise—without errors.</p>
-
-      <h3>Why is 10,000 hours the goal for capturing audio?</h3>
-      <p>This is approximately the number of hours required to train a production STT system.</p>
-
-      <h3>Where does the source text come from?</h3>
-      <p>The current sentences come from contributor donations, as well as dialogue
-         from public domain movie scripts like <i>It's a Wonderful Life.</i></p>
-      <p>You can view our source sentences in <a target="_blank" href="https://github.com/kjanko/deep-speech-mk-sentences">this GitHub folder</a>.</p>
     </div>;
   }
 }
