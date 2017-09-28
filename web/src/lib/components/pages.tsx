@@ -332,6 +332,8 @@ export default class Pages extends Component<PagesProps, PagesState> {
     }
 
     return <div id="main" className={className}>
+      <div onClick={this.openInApp} id="install-app">Отвори во апликација
+        <a onClick={this.closeOpenInApp}>X</a></div>
       <header className={(this.state.isMenuVisible || this.state.scrolled ?
                           'active' : '')}>
         <Logo navigate={this.props.navigate}/>
