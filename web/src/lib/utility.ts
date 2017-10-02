@@ -47,7 +47,7 @@ export function isSafari(): boolean {
 }
 
 export function isProduction(): boolean {
-  return window.location.origin === 'https://voice.mozilla.org';
+  return window.location.origin === 'https://jargon.mk';
 }
 
 export function getItunesURL(): string {
