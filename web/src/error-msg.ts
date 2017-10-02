@@ -10,4 +10,3 @@ export default class ERROR_MSG {
   static ERR_UPLOAD_FAILED: string = "Uploading your recording to the server failed. This may be a temporary problem. Please try again.";
   static ERR_DATA_FAILED: string = "Submitting your profile data failed. This may be a temporary problem. Please try again.";
 }
-
