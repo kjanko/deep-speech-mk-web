@@ -7,6 +7,6 @@
   "MYSQLDBNAME": "deepspeech",
   "MYSQLHOST": "localhost",
   "MYSQLPORT":  "3306",
-  "BUCKET_NAME": "deep-speech-skp",
+  "BUCKET_NAME": "deep-speech-zrh",
   "BUCKET_LOCATION": "eu-west-1"
 }
