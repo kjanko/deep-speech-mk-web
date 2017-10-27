@@ -5,6 +5,6 @@ export default (props) => {
     onClick={(evt) =>  {
     }}>
     <span class="main-title">Jargon</span><br />
-    <span class="secondary-title">netcetera</span><br />
+    <span class="secondary-title">Netcetera</span><br />
   </a>;
 }

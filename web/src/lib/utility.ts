@@ -51,5 +51,5 @@ export function isProduction(): boolean {
 }
 
 export function getItunesURL(): string {
-  return 'https://itunes.apple.com/us/app/project-common-voice-by-mozilla/id1240588326';
+  return 'httaps://itunes.apple.com/us/app/project-common-voice-by-mozilla/id1240588326';
 }
