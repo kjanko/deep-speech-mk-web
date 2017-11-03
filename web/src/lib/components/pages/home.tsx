@@ -23,7 +23,7 @@ export default class Home extends Component<Props, void> {
 
   render() {
     return <div id="home-container" className={this.props.active}>
-      <h1 id="home-title">Project Jargon</h1>
+      <h1 id="home-title">Project Common Voice - Swiss German</h1>
       <div id="home-layout">
         <div className="left-column">
 			<p>
