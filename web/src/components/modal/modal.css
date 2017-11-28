@@ -1,0 +1,51 @@
+.ReactModal__Overlay {
+    display: table;
+    z-index: var(--top-z-index);
+    width: 100%;
+    height: 100%;
+    animation: fade-in .2s;
+}
+
+.ReactModal__Content {
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.ReactModal__Content .inner {
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+    max-width: 40rem;
+    text-align: center;
+    background: var(--base-background-color);
+    pointer-events: all;
+}
+
+.ReactModal__Content .buttons {
+    margin-top: 1rem;
+}
+
+.ReactModal__Content .buttons button, .ReactModal__Content .buttons a {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin: var(--standard-margin);
+    padding: 0.5rem 1.5rem;
+    min-width: 12rem;
+    text-transform: uppercase;
+    font-size: var(--small-font-size);
+    font-weight: bold;
+}
+
+.ReactModal__Content .buttons button:hover, .ReactModal__Content .buttons a:hover {
+    color: white;
+    background-color: black;
+}
+
+@media (max-width: 600px) {
+    .ReactModal__Content .buttons button, .ReactModal__Content .buttons a {
+        width: 100%;
+    }
+}

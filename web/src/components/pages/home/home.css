@@ -1,0 +1,74 @@
+@import url('./project-status.css');
+
+@media (min-width: 600px) {
+    #home-title {
+        margin-top: 4rem;
+        width: var(--desktop-width);
+    }
+
+    #wall-of-text {
+        width: calc(100% - 391px);
+        margin-left: auto;
+    }
+
+    #contribute-button {
+        top: 19.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #home-title {
+        left: 0;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    #contribute-button {
+        top: 16.5rem;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        margin: 0 auto;
+        max-width: 280px;
+        width: 100%;
+    }
+}
+
+#home-title {
+    position: absolute;
+    top: 0;
+    animation: fade-in .5s;
+}
+
+#contribute-button {
+    position: absolute;
+}
+
+#contribute-button img {
+    width: 20px;
+    height: 20px;
+}
+
+#contribute-button div {
+    display: flex;
+    margin-right: 1rem;
+}
+
+#wall-of-text p:first-child {
+    margin-bottom: var(--standard-margin);
+}
+
+#show-more-text {
+    font-size: var(--small-font-size);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#help-explain {
+    margin: var(--standard-margin) 0 1.5rem;
+    font-size: var(--small-font-size);
+    font-style: italic;
+}

@@ -1,0 +1,75 @@
+.card-action {
+    border: none;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--base-font-family);
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 0 2px;;
+    background: white;
+    text-transform: none;
+    white-space: nowrap;
+    animation: fade-in .5s;
+}
+
+@media (max-width: 600px) {
+    .card-action {
+        white-space: normal;
+    }
+}
+
+.hr {
+    border: solid 0.1rem;
+    margin: 1.5rem 0;
+    width: 100%;
+    color: var(--color-record-hr);
+}
+
+.labeled-form-control {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-style: italic;
+    color: #4A4A4A;
+}
+
+.labeled-form-control {
+    font-size: var(--small-font-size);
+}
+
+.labeled-form-control input, .labeled-form-control select, .labeled-form-control textarea {
+    box-sizing: border-box;
+    border: none;
+    margin-top: .2rem;
+    padding: .5rem;
+    font-size: var(--base-font-size);
+    font-family: var(--base-font-family);
+    background-color: var(--color-input-background);
+    color: #959595;
+}
+
+.labeled-form-control input, .labeled-form-control select {
+    height: var(--input-height);
+}
+
+.labeled-form-control :required, .labeled-form-control :valid {
+    box-shadow:none;
+}
+
+.menu-icon {
+    transform: scale(2);
+}
+
+.menu-icon rect {
+    transition: transform .2s var(--easing);
+}
+
+.menu-icon.active  .left {
+    transform: translateX(-4px);
+}
+
+.menu-icon.active .right {
+    transform: translateX(4px);
+}

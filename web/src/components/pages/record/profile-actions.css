@@ -1,0 +1,42 @@
+#profile-actions {
+    margin: 0 auto 2rem;
+    padding-top: var(--standard-margin);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#profile-form-container {
+    position: relative;
+    text-align: start;
+}
+
+#why-profile {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 70%;
+    background-color: var(--color-grey-background);
+}
+
+#why-profile-text {
+    text-align: left;
+}
+
+#why-profile-title {
+    margin: 1rem auto;
+    font-weight: bold;
+}
+
+#profile-actions a {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#profile-actions a, #why-profile-title {
+    font-size: var(--small-font-size);
+}
+
+#profile-actions .alert {
+    margin-bottom: 1rem;
+}

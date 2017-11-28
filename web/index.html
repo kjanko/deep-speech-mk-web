@@ -3,7 +3,6 @@
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <meta charset="utf-8" />
-
     <title>Project Jargon</title>
     <meta name="keywords" content="jargon, netcetera">
     <meta name="description" content="Ајде да го искористиме Jargon и да бидеме дел од глобалната масовна иницијатива за препознавање на говор.">
@@ -15,17 +14,22 @@
 
     <meta property="og:image" content="/img/open-graph.png">
     <link rel="stylesheet" href="/dist/index.css">
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106805068-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments)};
-	  gtag('js', new Date());
+    <!-- Note: this inline script is allowed through CSP using a hash. To change this, you must also modify the hash -->
+    <script>if (window.location.origin === 'https://voice.mozilla.org' && navigator.doNotTrack !== 1) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	  gtag('config', 'UA-106805068-1');
-	</script>
+        ga('create', 'UA-101237170-1', 'auto');
+        ga('send', 'pageview');
+      } else {
+        console.log('disabling analytics on non production');
+        window.ga = function() {}
+      }</script>
   </head>
   <body>
+    <div id="root"></div>
     <script src="/dist/bundle.js"></script>
   </body>
 </html>
