@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import API from '../services/api';
 import StateTree from '../stores/tree';
 import ListenBox from './listen-box/listen-box';
-
-const LOADING_MESSAGE = 'Се вчитува...';
-const LOAD_ERROR_MESSAGE =
-  'Извинете! Ги процесираме нашите аудио снимки, Ве молиме пробајте подоцна.';
+import STRINGS from '../../localize-strings';
 
 interface PropsFromState {
   api: API;
@@ -77,11 +74,11 @@ class Validator extends React.Component<Props, State> {
   render() {
     let sentence;
     if (this.state.loading) {
-      sentence = LOADING_MESSAGE;
+      sentence = STRINGS.validatorLoadingMsg;
     } else if (this.state.sentence) {
       sentence = this.state.sentence;
     } else {
-      sentence = LOAD_ERROR_MESSAGE;
+      sentence = STRINGS.validatorLoadErrorMsg;
     }
 
     return (

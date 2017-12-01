@@ -13,6 +13,7 @@ import AudioIOS from './audio-ios';
 import AudioWeb, { AudioInfo } from './audio-web';
 import ProfileActions from './profile-actions';
 import Review from './review';
+import STRINGS from '../../../../localize-strings';
 
 const MIN_RECORDING_LENGTH = 300; // ms
 const MAX_RECORDING_LENGTH = 10000; // ms
@@ -22,9 +23,9 @@ const ERR_SENTENCES_NOT_LOADED =
 
 const UnsupportedInfo = () => (
   <div className="unsupported">
-    <h2>Се извинуваме, но вашата платформа моментално не е подржана.</h2>
+    <h2>{STRINGS.recordUnsupportedText}</h2>
     <p key="desktop">
-      On desktop computers, you can download the latest:
+      {STRINGS.recordDesktopDownload}
       <a target="_blank" href="https://www.firefox.com/">
         <FontIcon type="firefox" />Firefox
       </a>{' '}
@@ -34,7 +35,7 @@ const UnsupportedInfo = () => (
       </a>
     </p>
     <p key="ios">
-      <b>iOS</b> корисниците може да ја симнат нашата бесплатна апликација:
+      <b>iOS</b> {STRINGS.recordDownloadApp}
     </p>
     <a target="_blank" href={getItunesURL()}>
       <img src="/img/appstore.svg" />
@@ -315,7 +316,7 @@ class RecordPage extends React.Component<RecordProps, RecordState> {
               Cancel: this.closeRetryModal,
               Retry: () => window.location.reload(),
             }}>
-            Морате да дозволите пристап до микрофонот.
+            {STRINGS.recordAccessMic}
           </Modal>
         )}
         <div id="voice-record">
@@ -329,7 +330,7 @@ class RecordPage extends React.Component<RecordProps, RecordState> {
           {showSubmitSuccess && (
             <div id="alert-container">
               <Alert autoHide onClose={this.closeSubmitSuccess}>
-                Успешно поднесување! Дали сакате да се снимате повторно?
+                {STRINGS.recordSuccessRec}
               </Alert>
             </div>
           )}
@@ -354,8 +355,7 @@ class RecordPage extends React.Component<RecordProps, RecordState> {
             {areSentencesLoaded
               ? [
                   <p key="record-help" id="record-help">
-                    Ве молиме кликнете на крукчето за да започнете со снимање, а
-                    потоа гласно прочитајте ја реченицата.
+                    {STRINGS.recordClickToRec}
                   </p>,
                   <button
                     key="record-button"

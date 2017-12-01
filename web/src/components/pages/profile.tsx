@@ -1,5 +1,5 @@
 import * as React from 'react';
-import messages from '../../messages';
+import STRINGS from '../../../localize-strings';
 import ProfileForm from '../profile-form/profile-form';
 
 import { RouteComponentProps } from 'react-router';
@@ -11,8 +11,8 @@ export default (props: RouteComponentProps<any>) => (
     <br />
     <br />
 
-    <h1>{messages.WHY_PROFILE.TITLE}</h1>
+    <h1>{STRINGS.profileActionsTitle}</h1>
     <br />
-    <p>{messages.WHY_PROFILE.CONTENT}</p>
+    <p>{STRINGS.profileActionsContent}</p>
   </div>
 );

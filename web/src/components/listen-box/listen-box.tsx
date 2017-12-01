@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Tracker from '../../services/tracker';
 import { FontIcon, PlayIcon, RedoIcon } from '../ui/icons';
+import STRINGS from '../../../localize-strings';
 
 interface Props {
   src?: string;
@@ -144,8 +145,8 @@ export default class ListenBox extends React.Component<Props, State> {
         </div>
         {this.props.vote ? (
           <div className={'vote-box ' + (this.state.played ? '' : 'disabled')}>
-            <a onClick={this.voteYes}>Да</a>
-            <a onClick={this.voteNo}>Не</a>
+            <a onClick={this.voteYes}>{STRINGS.yes}</a>
+            <a onClick={this.voteNo}>{STRINGS.no}</a>
           </div>
         ) : (
           <div className="delete-box" onClick={this.onDelete}>

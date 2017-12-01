@@ -10,6 +10,7 @@ import ListenBox from '../../listen-box/listen-box';
 import Modal from '../../modal/modal';
 import ProgressButton from '../../progress-button';
 import ProfileActions from './profile-actions';
+import STRINGS from '../../../../localize-strings';
 
 interface PropsFromState {
   api: API;
@@ -132,13 +133,13 @@ class Review extends React.Component<Props, State> {
               'Се согласувам': () => this.handlePrivacyAction(true),
               'Не се согласувам': () => this.handlePrivacyAction(false),
             }}>
-            Со користење на Common Voice, се согласувате со нашите{' '}
+            {STRINGS.reviewTermsAgreements}
             <a target="_blank" href="/terms">
-              Услови
+              {STRINGS.terms}
             </a>{' '}
             и{' '}
             <a target="_blank" href="/privacy">
-              Известувања за приватност
+              {STRINGS.privacyInfo}
             </a>.
           </Modal>
         )}
@@ -148,20 +149,19 @@ class Review extends React.Component<Props, State> {
               'Зачувај ги снимките': this.toggleResetModal,
               'Избриши ги снимките': this.resetAndGoHome,
             }}>
-            Прикачувањето е откажано. Дали сакате да ги избришеме вашите снимки?
+            {STRINGS.reviewUploadCancel}
           </Modal>
         )}
         <div id="voice-submit-review">
-          <h2>Преглед и Поднесување</h2>
+          <h2>{STRINGS.reviewSubmitHeader}</h2>
           <br />
-          <p>
-            Ви благодариме за аудио снимките<br />
-            Прегледајте и поднесете ги вашите снимки подолу.
+          <p>{STRINGS.reviewReviewSubmitRow1}sdasdasdasd<br />
+            {STRINGS.reviewReviewSubmitRow2}wUploadCancel}
           </p>
         </div>
         <p id="box-headers">
-          <span>Прегледај</span>
-          <span>Пресними</span>
+          <span>{STRINGS.submit}</span>
+          <span>{STRINGS.rerecord}</span>
         </p>
         {Object.entries(
           this.props.sentenceRecordings
@@ -175,12 +175,12 @@ class Review extends React.Component<Props, State> {
         ))}
         <br />
         <div className="actions">
-          <a onClick={this.toggleResetModal}>Прекини поднесување</a>
+          <a onClick={this.toggleResetModal}>{STRINGS.reviewSubmitCancel}</a>
           <ProgressButton
             percent={uploading ? 100 : 0}
             disabled={uploading}
             onClick={this.handleSubmit}
-            text="Поднеси"
+            text={STRINGS.submit}
           />
         </div>
         <ProfileActions />

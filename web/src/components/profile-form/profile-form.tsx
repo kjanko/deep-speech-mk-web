@@ -5,6 +5,7 @@ import StateTree from '../../stores/tree';
 import { ACCENTS, AGES, GENDERS, User } from '../../stores/user';
 import Modal from '../modal/modal';
 import { LabeledInput, LabeledSelect } from '../ui/ui';
+import STRINGS from '../../../localize-strings';
 
 interface EditableUser {
   email: string;
@@ -95,16 +96,16 @@ class ProfileForm extends React.Component<Props, State> {
               'Keep Data': this.toggleClearModal,
               'Delete Data': this.clear,
             }}>
-            Со бришење на податоците од вашиот профил, вашите демографски
-            информации нема повеќе да се испраќаат до Common Voice заедно со
-            вашите снимки.
+            {STRINGS.profileFormModalText}
           </Modal>
         )}
 
         <div className="title-and-action">
-          <h1>Креирај профил</h1>
+          <h1>{STRINGS.profileActionsCreateProfile}</h1>
           <a onClick={onExit || this.toggleClearModal}>
-            {onExit ? 'Изгаси ја формата' : hasEnteredInfo && 'Избриши профил'}
+            {onExit
+              ? STRINGS.profileFormExitForm
+              : hasEnteredInfo && STRINGS.profileFormDeleteProfile}
           </a>
         </div>
         <br />
@@ -112,7 +113,7 @@ class ProfileForm extends React.Component<Props, State> {
         <form onSubmit={this.save}>
           <LabeledInput
             className="half-width"
-            label="Е-маил"
+            label={STRINGS.email}
             name="email"
             onChange={this.update}
             type="email"
@@ -121,7 +122,7 @@ class ProfileForm extends React.Component<Props, State> {
 
           <LabeledInput
             className="half-width"
-            label="Корисничко име"
+            label={STRINGS.username}
             name="username"
             onChange={this.update}
             type="text"
@@ -135,7 +136,7 @@ class ProfileForm extends React.Component<Props, State> {
               type="checkbox"
               checked={sendEmails}
             />
-            Да, прифаќам да примам пораки со новости за Common Voice Project.
+            {STRINGS.profileFormAcceptMessages}
           </label>
 
           <hr />
@@ -143,16 +144,16 @@ class ProfileForm extends React.Component<Props, State> {
           <LabeledSelect
             className="half-width"
             disabled
-            label="Јазик"
+            label={STRINGS.language}
             name="language"
             tabIndex={-1}>
-            <option value="">Повеќе јазици наскоро!</option>
+            <option value="">{STRINGS.profileFormMoreLanguages}</option>
           </LabeledSelect>
 
           <LabeledSelect
             className="half-width"
             label="Акцент"
-            name="accent"
+            name={STRINGS.accent}
             onChange={this.update}
             value={accent}>
             {this.renderOptionsFor(ACCENTS)}
@@ -160,7 +161,7 @@ class ProfileForm extends React.Component<Props, State> {
 
           <LabeledSelect
             className="half-width"
-            label="Возраст"
+            label={STRINGS.age}
             name="age"
             onChange={this.update}
             value={age}>
@@ -169,7 +170,7 @@ class ProfileForm extends React.Component<Props, State> {
 
           <LabeledSelect
             className="half-width"
-            label="Пол"
+            label={STRINGS.gender}
             name="gender"
             onChange={this.update}
             value={gender}>
@@ -178,7 +179,7 @@ class ProfileForm extends React.Component<Props, State> {
 
           <div className="buttons">
             <button type="submit" className={isModified ? 'dark' : ''}>
-              {isModified ? 'Зачувај' : 'Зачувано'}
+              {isModified ? STRINGS.save : STRINGS.saved}
             </button>
           </div>
         </form>

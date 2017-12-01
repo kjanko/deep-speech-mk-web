@@ -1,8 +1,9 @@
 import * as React from 'react';
+import STRINGS from '../../../localize-strings';
 
 export default () => (
   <div id="not-found-container">
-    <h2>Страницата не е пронајдена</h2>
-    <p>Се плашам дека не знам што бараш.</p>
+    <h2>{STRINGS.notFound}</h2>
+    <p>{STRINGS.notFoundExplain}</p>
   </div>
 );

@@ -28,6 +28,7 @@ import FAQ from './pages/faq';
 import Privacy from './pages/privacy';
 import Terms from './pages/terms';
 import NotFound from './pages/not-found';
+import STRINGS from '../../localize-strings';
 
 const showDatasetsPage = localStorage.getItem('showDatasetsPage');
 
@@ -42,7 +43,7 @@ const URLS = {
   PROFILE: '/profile',
   DATA: '/data',
   FAQ: '/faq',
-  PRIVACY: '/privacy',
+  PRIVACY: '/privacyInfo',
   TERMS: '/terms',
   NOTFOUND: '/not-found',
 };
@@ -236,7 +237,7 @@ class Pages extends React.Component<PagesProps, PagesState> {
               ref={div => {
                 this.installApp = div as HTMLElement;
               }}>
-              Отвори во апликација
+              {STRINGS.pagesOpenInApp}
               <a onClick={this.closeOpenInApp}>X</a>
             </div>
           )}
@@ -312,7 +313,7 @@ class Pages extends React.Component<PagesProps, PagesState> {
               <div id="help-links">
                 <Link id="help" to={URLS.FAQ}>
                   <SupportIcon />
-                  <div>Помош</div>
+                  <div>{STRINGS.help}</div>
                 </Link>
                 <div className="divider" />
                 <a
@@ -328,12 +329,12 @@ class Pages extends React.Component<PagesProps, PagesState> {
                   target="blank"
                   href="https://discourse.mozilla-community.org/c/voice">
                   <DiscourseIcon />
-                  <div>Дискусија</div>
+                  <div>{STRINGS.discussion}</div>
                 </a>
                 <div className="divider" />
                 <a onClick={this.toggleContactModal}>
                   <ContactIcon />
-                  <div>Контакт</div>
+                  <div>{STRINGS.contact}</div>
                 </a>
               </div>
               <div id="moz-links">
@@ -341,17 +342,17 @@ class Pages extends React.Component<PagesProps, PagesState> {
                   <Logo reverse={true} />
                   <div className="links">
                     <p>
-                      <Link to={URLS.PRIVACY}>Приватност</Link>
-                      <Link to={URLS.TERMS}>Услови</Link>
+                      <Link to={URLS.PRIVACY}>{STRINGS.privacy}</Link>
+                      <Link to={URLS.TERMS}>{STRINGS.terms}</Link>
                       <a
                         target="_blank"
                         href="https://www.mozilla.org/en-US/privacy/websites/#cookies">
-                        Колачиња
+                        {STRINGS.cookies}
                       </a>
-                      <Link to={URLS.FAQ}>ЧПП</Link>
+                      <Link to={URLS.FAQ}>{STRINGS.faq}</Link>
                     </p>
                     <p>
-                      Содржината е достапна под&nbsp;<a
+                      {STRINGS.contentAvailable}&nbsp<a
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.mozilla.org/en-US/foundation/licensing/website-content/">
@@ -361,7 +362,7 @@ class Pages extends React.Component<PagesProps, PagesState> {
                   </div>
                 </div>
                 <div id="sharing">
-                  <h3>Помогнете ни да најдеме донатори на глас!</h3>
+                  <h3>{STRINGS.pagesHelpFindDonator}</h3>
 
                   <div className="icons">
                     <button id="link-copy" onClick={this.copyShareURL}>
@@ -411,7 +412,7 @@ class Pages extends React.Component<PagesProps, PagesState> {
     return (
       <nav id={id} className="nav-list">
         <NavLink to={URLS.RECORD} exact>
-          Зборувај
+          {STRINGS.speak}
         </NavLink>
         {showDatasetsPage && (
           <NavLink to={URLS.DATA} exact>
@@ -419,7 +420,7 @@ class Pages extends React.Component<PagesProps, PagesState> {
           </NavLink>
         )}
         <NavLink to={URLS.PROFILE} exact>
-          Профил
+          {STRINGS.profile}
         </NavLink>
         {withTallies && this.renderTallies()}
       </nav>

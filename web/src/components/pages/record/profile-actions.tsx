@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProfileForm from '../../profile-form/profile-form';
 import { User } from '../../../stores/user';
-import messages from '../../../messages';
 import Alert from '../../alert/alert';
 import { Hr } from '../../ui/ui';
+import STRINGS from '../../../../localize-strings';
 
 interface WhyProfileState {
   expanded: boolean;
@@ -24,14 +24,14 @@ class WhyProfile extends React.Component<{}, WhyProfileState> {
       <div>
         <div id="why-profile-title">
           {expanded ? (
-            messages.WHY_PROFILE.TITLE
+            STRINGS.profileActionsTitle
           ) : (
-            <a onClick={this.toggle}>{messages.WHY_PROFILE.TITLE}</a>
+            <a onClick={this.toggle}>{STRINGS.profileActionsTitle}</a>
           )}
         </div>
         {expanded && (
           <div id="why-profile">
-            <p id="why-profile-text">{messages.WHY_PROFILE.CONTENT}</p>
+            <p id="why-profile-text">{STRINGS.profileActionsContent}</p>
             <a onClick={this.toggle}>Затвори</a>
           </div>
         )}
@@ -75,11 +75,11 @@ class ProfileActions extends React.Component<PropsFromState, State> {
         {!profileFormVisible && <Hr />}
         {alertVisible && (
           <Alert autoHide onClose={this.closeAlert}>
-            Success, profile created!
+            {STRINGS.profileActionsSuccesMsg}
           </Alert>
         )}
         {this.props.hasEnteredInfo ? (
-          <Link to="/profile">Edit Profile</Link>
+          <Link to="/profile">{STRINGS.profileActionsEditProfile}</Link>
         ) : (
           <div>
             {profileFormVisible ? (
@@ -88,7 +88,7 @@ class ProfileActions extends React.Component<PropsFromState, State> {
               </div>
             ) : (
               <button type="button" onClick={this.toggleProfileForm}>
-                Креирај профил
+                {STRINGS.profileActionsCreateProfile}
               </button>
             )}
             <WhyProfile />
