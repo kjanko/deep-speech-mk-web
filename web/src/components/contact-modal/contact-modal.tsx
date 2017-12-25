@@ -9,7 +9,7 @@ interface Props {
 
 export default ({ onRequestClose }: Props) => (
   <Modal innerClassName="contact-modal">
-    <form action="mailto:mikey@mozilla.com" method="post" encType="text/plain">
+    <form action="mail@kjanko.com" method="post" encType="text/plain">
       <div className="title-and-action">
         <h1>{STRINGS.contactModalHeader}</h1>
         <a onClick={onRequestClose}>{STRINGS.back}</a>

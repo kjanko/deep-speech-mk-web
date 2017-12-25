@@ -2,9 +2,10 @@ import * as path from 'path';
 import { getFilesInFolder, getAllFileContents } from './fs-helper';
 import { getFileExt } from './utility';
 import * as Random from 'random-js';
+import STRINGS from '../../../web/localize-strings';
 
 const CWD = process.cwd();
-const SENTENCE_FOLDER = path.resolve(CWD, 'server/data/');
+const SENTENCE_FOLDER = path.resolve(CWD, 'server/data/', '/mk');
 const UNUSED_FOLDER = path.join(SENTENCE_FOLDER, 'not-used');
 
 /**

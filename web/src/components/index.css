@@ -702,3 +702,77 @@ body:not(.ios) .recording #background-container {
   width: 100%;
   height: auto;
 }
+
+.languagepicker {
+  background-color: #FFF;
+  display: inline-block;
+  padding: 0;
+  height: 35px;
+  overflow: hidden;
+  transition: all .3s ease;
+  margin: 0 50px 0 10px;
+  vertical-align: top;
+  float: left;
+}
+
+.languagepicker:hover {
+  /* don't forget the 1px border */
+  height: 71px;
+}
+
+.languagepicker button{
+  color: #000;
+  text-decoration: none;
+}
+
+.languagepicker li {
+  display: block;
+  line-height: 35px;
+  border-radius: 5px;
+}
+
+.languagepicker li:hover{
+  background-color: #EEE;
+  color: #000;
+}
+
+.languagepicker li button {
+  border: 0;
+  background-color: Transparent;
+}
+
+.languagepicker li button:hover {
+  background-color: #EEE;
+  color: #000;
+}
+
+.languagepicker li img {
+  margin-right: 5px;
+}
+
+.roundborders {
+  border-radius: 5px;
+}
+
+.large:hover {
+  /*
+  don't forget the 1px border!
+  The first language is 40px heigh,
+  the others are 41px
+  */
+  height: 245px;
+}
+
+@media (max-width: 600px) {
+  .languagepicker {
+    align-items: center;
+  }
+  .languagepicker li button{
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .languagepicker:hover {
+    /* don't forget the 1px border */
+    height: 121px;
+  }
+}

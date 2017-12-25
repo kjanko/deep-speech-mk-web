@@ -93,8 +93,8 @@ class ProfileForm extends React.Component<Props, State> {
           <Modal
             onRequestClose={this.toggleClearModal}
             buttons={{
-              'Keep Data': this.toggleClearModal,
-              'Delete Data': this.clear,
+              [STRINGS.profileFormKeepData]: this.toggleClearModal,
+              [STRINGS.profileFormDeleteData]: this.clear,
             }}>
             {STRINGS.profileFormModalText}
           </Modal>

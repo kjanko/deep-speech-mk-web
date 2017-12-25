@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import Pages from './pages';
-import { isMobileWebkit, isFocus, isNativeIOS, sleep } from '../utility';
+import { isMobileWebkit, isFocus, isNativeIOS, sleep, getLanguage } from '../utility';
 import { BrowserRouter as Router } from 'react-router-dom';
 import store from '../stores/root';
+import STRINGS from '../../localize-strings';
 
 const LOAD_TIMEOUT = 5000; // we can only wait so long.
 
@@ -34,6 +35,7 @@ export default class App extends React.Component<{}, State> {
   main: HTMLElement;
   progressMeter: HTMLSpanElement;
 
+
   state = { loaded: false };
 
   /**
@@ -53,6 +55,8 @@ export default class App extends React.Component<{}, State> {
     if (isMobileWebkit()) {
       document.body.classList.add('mobile-safari');
     }
+
+    STRINGS.setLanguage(getLanguage());
   }
 
   /**

@@ -5,7 +5,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { Recordings } from '../stores/recordings';
 import StateTree from '../stores/tree';
 import { User } from '../stores/user';
-import { getItunesURL, isNativeIOS, isIOS, isSafari } from '../utility';
+import { getItunesURL, isNativeIOS, isIOS, isSafari, getLanguage } from '../utility';
+import { BrowserRouter as Router } from 'react-router-dom';
 import ContactModal from './contact-modal/contact-modal';
 import Logo from './logo';
 import {
@@ -30,12 +31,13 @@ import Terms from './pages/terms';
 import NotFound from './pages/not-found';
 import STRINGS from '../../localize-strings';
 
+
 const showDatasetsPage = localStorage.getItem('showDatasetsPage');
 
-const shareURL = 'https://voice.mozilla.org/';
-const encodedShareText = encodeURIComponent(
-  'Help robots talk, donate your voice at ' + shareURL
-);
+const shareURL = 'https://jargon.mk/';
+const encodedShareText = encodeURIComponent([STRINGS.shareMessage] + shareURL);
+const img_MK = '../../img/mk.png';
+const img_CH = '../../img/ch.png';
 
 const URLS = {
   ROOT: '/',
@@ -131,6 +133,37 @@ class Pages extends React.Component<PagesProps, PagesState> {
     requestAnimationFrame(this.renderBackground);
   };
 
+  private renderDropdown = () => {
+    let lang = STRINGS.getLanguage();
+
+    if (lang === 'mk') {
+      return (<ul className="languagepicker roundborders">
+        <li><button onClick={() => this.changeLang('mk')}><img src={img_MK} />Mkd</button></li>
+        <li><button onClick={() => this.changeLang('ch')}><img src={img_CH} />ch</button></li>
+        </ul>
+      );
+    }
+    else { //(lang === 'en' || lang === 'en-US') {
+      return (<ul className="languagepicker roundborders">
+        <li><button onClick={() => this.changeLang('ch')}><img src={img_CH} />ch</button></li>
+        <li><button onClick={() => this.changeLang('mk')}><img src={img_MK} />Mkd</button></li>
+      </ul>);
+    }
+  };
+
+  private changeLang = (lang: string) => {
+    if (lang === 'ch') {
+      STRINGS.setLanguage(lang);
+      console.log(STRINGS.getLanguage());
+      this.forceUpdate();
+    }
+    else if (lang === 'mk') {
+      STRINGS.setLanguage(lang);
+      console.log(STRINGS.getLanguage());
+      this.forceUpdate();
+    }
+  };
+
   /**
    * If the iOS app is installed, open it. Otherwise, open the App Store.
    */
@@ -214,12 +247,22 @@ class Pages extends React.Component<PagesProps, PagesState> {
     this.setState({ isMenuVisible: !this.state.isMenuVisible });
   };
 
+
   render() {
     const pageName = this.props.location.pathname.substr(1) || 'home';
     let className = pageName;
     if (this.state.isRecording) {
       className += ' recording';
     }
+
+    if (window.location.pathname == '/mk/') {
+      STRINGS.setLanguage('mk');
+    }
+    else if (window.location.pathname == '/ch/') {
+      STRINGS.setLanguage('ch');
+    }
+
+
 
     return (
       <div id="main" className={className}>
@@ -352,7 +395,7 @@ class Pages extends React.Component<PagesProps, PagesState> {
                       <Link to={URLS.FAQ}>{STRINGS.faq}</Link>
                     </p>
                     <p>
-                      {STRINGS.contentAvailable}&nbsp<a
+                      {STRINGS.contentAvailable}<a
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.mozilla.org/en-US/foundation/licensing/website-content/">
@@ -423,6 +466,7 @@ class Pages extends React.Component<PagesProps, PagesState> {
           {STRINGS.profile}
         </NavLink>
         {withTallies && this.renderTallies()}
+        {this.renderDropdown()}
       </nav>
     );
   }

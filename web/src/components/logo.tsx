@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import STRINGS from '../../localize-strings';
 
 export default (props: any) => {
-  const imgSrc = '/img/netcetera-logo-inverse.png';
-  const img = '/img/jargon_Netcetera_logo.svg';
+  /*BASE_URL = "http://domain.mk" + STRINGS.getLanguage()
+  PATH_URL = "http://domain.mk"*/
+  const img = '/img/jargon.svg'; /*PATH_URL+*/
 
   return (
-    <Link className="main-logo" to="/">
-      {/*<span className="main-title">{STRINGS.jargon}</span>*/}
-      <br />
+    <Link className="main-logo" to="/#">
       <div className="secondary-title">
         <img src={img} alt="Logo" />
       </div>

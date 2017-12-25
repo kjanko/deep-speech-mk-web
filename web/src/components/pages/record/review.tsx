@@ -130,8 +130,8 @@ class Review extends React.Component<Props, State> {
         {showPrivacyModal && (
           <Modal
             buttons={{
-              'Се согласувам': () => this.handlePrivacyAction(true),
-              'Не се согласувам': () => this.handlePrivacyAction(false),
+              [STRINGS.agree]: () => this.handlePrivacyAction(true),
+              [STRINGS.disagree]: () => this.handlePrivacyAction(false),
             }}>
             {STRINGS.reviewTermsAgreements}
             <a target="_blank" href="/terms">
@@ -146,8 +146,8 @@ class Review extends React.Component<Props, State> {
         {showResetModal && (
           <Modal
             buttons={{
-              'Зачувај ги снимките': this.toggleResetModal,
-              'Избриши ги снимките': this.resetAndGoHome,
+              [STRINGS.reviewSaveAudio]: this.toggleResetModal,
+              [STRINGS.reviewDeleteAudio]: this.resetAndGoHome,
             }}>
             {STRINGS.reviewUploadCancel}
           </Modal>
@@ -155,8 +155,10 @@ class Review extends React.Component<Props, State> {
         <div id="voice-submit-review">
           <h2>{STRINGS.reviewSubmitHeader}</h2>
           <br />
-          <p>{STRINGS.reviewReviewSubmitRow1}sdasdasdasd<br />
-            {STRINGS.reviewReviewSubmitRow2}wUploadCancel}
+          <p>
+            {STRINGS.reviewReviewSubmitRow1}
+            <br />
+            {STRINGS.reviewReviewSubmitRow2}
           </p>
         </div>
         <p id="box-headers">

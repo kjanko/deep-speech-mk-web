@@ -6,6 +6,7 @@ import Modal from '../../modal/modal';
 import { SuccessIcon } from '../../ui/icons';
 import { LabeledInput } from '../../ui/ui';
 import { FormEvent } from 'react';
+import STRINGS from '../../../../localize-strings';
 
 interface PropsFromState {
   user: User.State;
@@ -43,43 +44,38 @@ class EmailModal extends React.Component<Props, State> {
       <Modal {...{ onRequestClose }} innerClassName="email-modal">
         <div className="head">
           <SuccessIcon />
-          <h2>Твоето симнување започна.</h2>
+          <h2>{STRINGS.emailModalHeader}</h2>
         </div>
 
         <form onSubmit={this.handleSubmit}>
-          <p>
-            Help us build a community around voice technology, stay in touch via
-            email.
+          <p>{STRINGS.emailModalFormParagraphOne}
           </p>
 
           <LabeledInput
-            label={isSubmitted ? '' : 'Внесете е-маил'}
+            label={isSubmitted ? '' : [STRINGS.enterEmail]}
             type="email"
-            value={isSubmitted ? "Thank you. We'll keep in touch." : email}
+            value={isSubmitted ? [STRINGS.emailModalKeepInTouch] : email}
             disabled={isSubmitted}
             onChange={(event: any) =>
               this.setState({ email: event.target.value })}
           />
 
-          {!isSubmitted && <button type="submit">Поднеси</button>}
+          {!isSubmitted && <button type="submit">{STRINGS.submit}</button>}
 
           <a onClick={onRequestClose} className="cancel">
-            {isSubmitted ? 'Return to Common Voice Datasets' : 'Не, фала'}
+            {isSubmitted ? [STRINGS.returnToCommonVoiceDatasets] : [STRINGS.noThanks]}
           </a>
 
           {isSubmitted && <br />}
 
-          <p className="fine-print">
-            We at Mozilla are building a community around voice technology. We
-            would like to stay in touch with updates, new data sources and to
-            hear more about how you're using this data.
+          <p className="fine-print">{STRINGS.emailModalFormParagraphTwo}
           </p>
           <br />
 
           <p className="fine-print">
-            We promise to handle your information with care. Read more in our{' '}
+            {STRINGS.emailModalFormParagraphThree}
             <a href="/privacy" target="__blank" rel="noopener noreferrer">
-              Privacy Notice
+              {STRINGS.privacyInfo}
             </a>.
           </p>
         </form>
